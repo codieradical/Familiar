@@ -1,6 +1,6 @@
 {
   "name": "familiar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Familiar Discord Bot",
   "main": "index.js",
   "scripts": {
