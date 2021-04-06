@@ -1,2 +1,2 @@
-# Alphabot
-Alphabot is a Discord bot written in Go
+# Familiar
+Familiar is a discord bot you can use to keep track of tasks.
