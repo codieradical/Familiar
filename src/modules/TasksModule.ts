@@ -27,7 +27,6 @@ export default class TaskModule implements IModule {
     }
 
     public reminderLoop = async () => {
-        console.debug("& Starting Twitch tracker.")
         this.running = true
         
         while (this.running) {
@@ -99,10 +98,17 @@ export default class TaskModule implements IModule {
             var description = args.slice(2).join(" ")
             var createdAt = new Date().getTime()
 
+            var isFirstTask = (await Task.find()).length == 0
+
             await new Task({
                 description,
                 createdAt
             }).save()
+
+            if (isFirstTask)
+                await this.updateTaskMessage()
+
+            await message.delete()
         }
     }
 

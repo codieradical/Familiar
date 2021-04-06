@@ -25,5 +25,11 @@ export default class HelpModule implements IModule {
                 message.channel.send(helpEmbed)
             }
         })
+
+        events.onDiscordCommand(async (message, name, args) => {
+            if (name == "❤" || name == "♥" || name == "<3" || name == "❤️" || (name == "i" && args.length >= 2 && args[0] == "love" && args[1].startsWith("you"))) {
+                message.channel.send("❤️")
+            }
+        })
     }
 }
