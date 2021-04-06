@@ -108,7 +108,8 @@ export default class TaskModule implements IModule {
             if (isFirstTask)
                 await this.updateTaskMessage()
 
-            await message.delete()
+            if (!(message.channel instanceof DMChannel))
+                await message.delete()
         }
     }
 
