@@ -33,7 +33,7 @@ class DiscordBotClient extends Client {
 
             if (msg.content.startsWith(botPrefix) || msg.channel instanceof DMChannel) {
                 var split = msg.content.substr(msg.content.startsWith(botPrefix) ? botPrefix.length : 0).split(/[ ,]+/)
-                events.emitDiscordCommand(msg, split[0], split.length > 1 ? split.slice(1) : [])
+                events.emitDiscordCommand(msg, split[0].toLowerCase(), split.length > 1 ? split.slice(1) : [])
             }
         });
     }
